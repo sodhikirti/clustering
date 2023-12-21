@@ -154,12 +154,4 @@ def Search_N_for_models (model_list, learn_data, k1, k2):
 
 
     plt.subplot(133)
-    for i in  range(0, len(model_list)):
-        model_name = model_list[i]
-        colr = cm.Pastel1(i) 
-        plt.plot(data_plot.columns, [data_plot.loc[model_name, clu].get('DB_score') for clu in range(k1,k2)],color = colr , linewidth = 5,
-                 marker = 'o', label = model_name)
-
-        plt.title('Davies_Bouldin_score (The lower the better)',fontsize = 13)
-        plt.legend(loc='best')
     return compare
