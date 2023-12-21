@@ -107,8 +107,7 @@ class run_single_model(clustering_algothms):
         measure_score = {self.model_name :{
          'SS_score': SS_score(self.learn_data, self.labels).mean(), # -1<= 0 <= 1, the higher the better
          'DB_score': DB_score(self.learn_data, self.labels), # >0, the lower the better
-         'CH_score': CH_score(self.learn_data, self.labels)  # the higher the better
-           }}
+         }
         return measure_score
     
 def Search_N_for_single_model (model_name, learn_data, k1, k2):
@@ -150,7 +149,7 @@ def Search_N_for_models (model_list, learn_data, k1, k2):
         plt.plot(data_plot.columns, [data_plot.loc[model_name, clu].get('CH_score') for clu in range(k1,k2)],color = colr , linewidth = 5,
                  marker = 'o', label = model_name)
 
-        plt.title('Calinski_Harabasz_score (The higher the better)',fontsize = 15)
+        plt.title('Calinski_Harabasz_score',fontsize = 15)
         plt.legend(loc='best')
 
 
